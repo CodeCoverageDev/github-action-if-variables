@@ -16,8 +16,8 @@ jobs:
           
   variable-false:
    if: ${{secrets.TEST_RUN}} == false
-    runs-on: ubuntu_latest
-    steps:
-      - name: Skip Test
-        run: |
-          echo "Skipping Test"
+   runs-on: ubuntu-latest
+   steps:
+     - name: Skip Test
+       run: |
+        echo "Skipping Test"
