@@ -7,7 +7,7 @@ on:
       - main
 
 env:
-  TEST_RUN: ${{ secrets.TEST_RUN }}
+  TEST_RUN: ${{ env.TEST_RUN }}
   NAME: Chris
   
 jobs:
