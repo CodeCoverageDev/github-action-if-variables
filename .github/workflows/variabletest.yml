@@ -5,22 +5,23 @@ on:
   pull_request:
     branches:
       - main
-      
-env:
-  TEST_RUN: ${{secrets.TEST_RUN}}
   
 jobs:
   variable-true:
-    if: ${{ env.TEST_RUN == true }}
     runs-on: ubuntu-latest
+    env:
+      TEST_RUN: ${{secrets.TEST_RUN}}
+    if: ${{ env.TEST_RUN == true }}
     steps:
       - name: Run Test
         run: |
           echo "Running Test"
           
   variable-false:
-   if: ${{ env.TEST_RUN == false }}
    runs-on: ubuntu-latest
+   env:
+     TEST_RUN: ${{secrets.TEST_RUN}}
+   if: ${{ env.TEST_RUN == false }}
    steps:
      - name: Skip Test
        run: |
