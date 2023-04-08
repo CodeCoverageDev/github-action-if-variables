@@ -1,0 +1,23 @@
+name: variable-test
+
+on: 
+  pull_request:
+    branches:
+      - main
+      
+jobs:
+  variable-true:
+    if: ${{secrets.TEST_RUN}} == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Test
+        run: |
+          echo "Running Test"
+          
+   variable-false:
+      if: ${{secrets.TEST_RUN}} == false
+      runs-on: ubuntu_latest
+      steps:
+        - name: Skip Test
+          run: |
+            echo "Skipping Test"
