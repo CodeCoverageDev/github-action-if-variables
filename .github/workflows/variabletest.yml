@@ -5,9 +5,12 @@ on:
     branches:
       - main
       
+env:
+  TEST_RUN: ${{secrets.TEST_RUN}}
+  
 jobs:
   variable-true:
-    if: ${{secrets.TEST_RUN}} == true
+    if: TEST_RUN == true
     runs-on: ubuntu-latest
     steps:
       - name: Run Test
@@ -15,7 +18,7 @@ jobs:
           echo "Running Test"
           
   variable-false:
-   if: ${{secrets.TEST_RUN}} == false
+   if: TEST_RUN == false
    runs-on: ubuntu-latest
    steps:
      - name: Skip Test
