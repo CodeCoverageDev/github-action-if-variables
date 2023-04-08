@@ -7,13 +7,13 @@ on:
       - main
 
 env:
-  TEST_RUN: ${{ env.TEST_RUN }}
+  TEST_RUN: ${{ vars.TEST_RUN }}
   NAME: Chris
   
 jobs:
   variable-true:
     runs-on: ubuntu-latest
-    if: ${{ env.TEST_RUN == 'true' }}
+    if: ${{ vars.TEST_RUN == 'true' }}
     steps:
       - name: Run Test
         run: |
@@ -22,7 +22,7 @@ jobs:
           
   variable-false:
    runs-on: ubuntu-latest
-   if: ${{ env.TEST_RUN == 'false' }}
+   if: ${{ vars.TEST_RUN == 'false' }}
    steps:
      - name: Skip Test
        run: |
