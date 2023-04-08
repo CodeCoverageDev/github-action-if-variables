@@ -11,7 +11,7 @@ env:
   
 jobs:
   variable-true:
-    if: TEST_RUN == true
+    if: ${{ env.TEST_RUN == true }}
     runs-on: ubuntu-latest
     steps:
       - name: Run Test
@@ -19,7 +19,7 @@ jobs:
           echo "Running Test"
           
   variable-false:
-   if: TEST_RUN == false
+   if: ${{ env.TEST_RUN == false }}
    runs-on: ubuntu-latest
    steps:
      - name: Skip Test
