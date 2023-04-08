@@ -22,7 +22,7 @@ jobs:
           
   variable-false:
    runs-on: ubuntu-latest
-#    if: TEST_RUN == "false"
+   if: TEST_RUN == false
    steps:
      - name: Skip Test
        run: |
