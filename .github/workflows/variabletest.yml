@@ -13,7 +13,7 @@ env:
 jobs:
   variable-true:
     runs-on: ubuntu-latest
-#     if: TEST_RUN == "true"
+    if: $TEST_RUN == true
     steps:
       - name: Run Test
         run: |
@@ -22,7 +22,7 @@ jobs:
           
   variable-false:
    runs-on: ubuntu-latest
-   if: TEST_RUN == false
+   if: $TEST_RUN == false
    steps:
      - name: Skip Test
        run: |
